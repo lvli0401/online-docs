@@ -9,7 +9,7 @@ import { Repository } from 'typeorm'
 import { PostgresqlPersistence } from 'y-postgresql'
 
 import { PageEntity } from '../../entities/page.entity'
-import { yjsXmlMentionCollect } from '../../utils/yjsXmlMentionCollect'
+import { yjsXmlMentionCollect } from '../../utils/yjsXMLMentionCollect'
 
 @Injectable()
 export class PageService {
