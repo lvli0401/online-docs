@@ -11,8 +11,8 @@ export default () => {
         database: {
             type: 'postgres',
             // host: 'localhost',
-            host: isProd ? '172.28.49.109' : '192.168.31.251',
-            port: 5432,
+            host: isProd ? '172.28.49.109' : '192.168.31.68',
+            port: 5433,
             username: 'postgres',
             database: 'postgres',
             password: 'xiaoer',

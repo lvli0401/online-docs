@@ -15,7 +15,7 @@
 #         handle_path /api/* {
 #                 # reverse_proxy 192.168.3.19:3000
 #                 rewrite * /api{path}
-#                 reverse_proxy 192.168.31.251:8082
+#                 reverse_proxy 192.168.31.68:8082
 #         }
 
 

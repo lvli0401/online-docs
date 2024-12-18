@@ -17,16 +17,16 @@ services:
         command: 'node dist/main.js'
         depends_on:
             - miaoma-docs-postgresql
-    miaoma-docs-caddy:
-        image: caddy:latest
-        container_name: miaoma-docs-caddy
-        ports:
-            - 80:80
-            - 443:443
-            - 443:443/udp
-            - 5173:5173
-        volumes:
-            - ./caddy:/etc/caddy
-            # - ../:/app
-            - ../apps/frontend/web/dist:/app/frontend/web/dist
-        # command: ["caddy", "run", "--resume", "--config", "/etc/caddy/Caddyfile"]
+    # miaoma-docs-caddy:
+    #     image: caddy:latest
+    #     container_name: miaoma-docs-caddy
+    #     ports:
+    #         - 80:80
+    #         - 443:443
+    #         - 443:443/udp
+    #         - 5173:5173
+    #     volumes:
+    #         - ./caddy:/etc/caddy
+    #         # - ../:/app
+    #         - ../apps/frontend/web/dist:/app/frontend/web/dist
+    #     # command: ["caddy", "run", "--resume", "--config", "/etc/caddy/Caddyfile"]
