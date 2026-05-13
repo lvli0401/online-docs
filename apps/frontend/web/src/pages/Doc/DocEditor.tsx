@@ -15,7 +15,13 @@ import {
     MiaomaDocSchema,
     PartialBlock,
 } from '@miaoma-doc/core'
-import { DefaultReactSuggestionItem, getDefaultReactSlashMenuItems, SuggestionMenuController, useCreateMiaomaDoc } from '@miaoma-doc/react'
+import {
+    DefaultReactSuggestionItem,
+    getDefaultReactSlashMenuItems,
+    SuggestionMenuController,
+    TableToolbarController,
+    useCreateMiaomaDoc,
+} from '@miaoma-doc/react'
 import { MiaomaDocView } from '@miaoma-doc/shadcn'
 import { useQuery } from '@tanstack/react-query'
 import { Sparkles } from 'lucide-react'
@@ -28,6 +34,7 @@ import * as Y from 'yjs'
 import { AI } from '@/blocks/ai'
 import { Mention } from '@/blocks/mention'
 import { BasicAIChat } from '@/components/BasicAIChat'
+import { TopToolbar } from '@/components/TopToolbar/TopToolbar'
 import * as srv from '@/services'
 import { User } from '@/types/api'
 
@@ -160,7 +167,8 @@ export function DocEditor(props: DocEditorProps) {
     }, [])
 
     return (
-        <MiaomaDocView editor={editor} theme="light" slashMenu={false}>
+        <MiaomaDocView editor={editor} theme="light" slashMenu={false} formattingToolbar={false}>
+            <TopToolbar />
             <SuggestionMenuController
                 triggerCharacter="@"
                 getItems={async query => {
@@ -179,6 +187,7 @@ export function DocEditor(props: DocEditorProps) {
             />
             {/* @ts-expect-error editor schema type fix */}
             <BasicAIChat editor={editor} />
+            <TableToolbarController />
         </MiaomaDocView>
     )
 }

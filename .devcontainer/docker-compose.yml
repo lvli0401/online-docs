@@ -2,18 +2,17 @@ version: '3'
 
 services:
     miaoma-docs-postgresql:
-        image: bitnami/postgresql:latest
+        image: postgres:16-alpine
         container_name: miaoma-docs-postgresql
         ports:
             - '5433:5432'
         environment:
-            - POSTGRESQL_USERNAME=postgres
-            - ALLOW_EMPTY_PASSWORD=yes
-            - POSTGRESQL_DATABASE=postgres
-            - POSTGRESQL_TIMEZONE=Asia/Shanghai # 数据库时区设置为上海时间
-            - POSTGRESQL_LOG_TIMEZONE=Asia/Shanghai # 日志时区设置为上海时间 # 设置时区为上海，这个非常重要，不然写入的时间相较于北京时间会少 8 小时
+            - POSTGRES_USER=postgres
+            - POSTGRES_DB=postgres
+            - POSTGRES_PASSWORD=xiaoer
+            - TZ=Asia/Shanghai
         volumes:
-            - ./postgresql_data:/bitnami/postgresql
+            - ./postgresql_data:/var/lib/postgresql/data
 
 networks:
     default:

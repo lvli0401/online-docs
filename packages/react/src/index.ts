@@ -85,6 +85,10 @@ export * from './components/TableHandles/TableHandleMenu/DefaultButtons/DeleteBu
 export * from './components/TableHandles/TableHandleMenu/TableHandleMenu'
 export * from './components/TableHandles/TableHandleMenu/TableHandleMenuProps'
 
+export * from './components/TableToolbar/TableToolbar'
+export * from './components/TableToolbar/TableToolbarController'
+export * from './components/TableToolbar/TableToolbarProps'
+
 export * from './hooks/useActiveStyles'
 export * from './hooks/useMiaomaDocEditor'
 export * from './hooks/useCreateMiaomaDoc'
