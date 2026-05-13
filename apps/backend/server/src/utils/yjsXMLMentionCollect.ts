@@ -7,7 +7,12 @@ import { xml2js } from 'xml-js'
 export type YjsXML = string
 
 export const yjsXmlMentionCollect = (xml: YjsXML) => {
-    const docObject = xml2js(xml)
+    let docObject: any
+    try {
+        docObject = xml2js(xml)
+    } catch {
+        return []
+    }
 
     /**
      * 妙-码
